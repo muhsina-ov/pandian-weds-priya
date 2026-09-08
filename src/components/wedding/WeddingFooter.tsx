@@ -2,6 +2,9 @@ import { useState } from "react";
 import { couple } from "@/lib/wedding";
 import { useParallax } from "@/hooks/use-reveal";
 import footerWash from "@/assets/footer-wash.jpg";
+const floral = "https://media.invitestory.in/seashell-vows/src/assets/floral-spray.png";
+const lantern = "https://media.invitestory.in/seashell-vows/src/assets/watercolor-lantern.png";
+const lanterns = "https://media.invitestory.in/seashell-vows/src/assets/lantern-constellation.png";
 
 export function WeddingFooter() {
   const drift = useParallax(0.18);
@@ -17,7 +20,7 @@ export function WeddingFooter() {
   }
 
   return (
-    <footer className="footer-scene relative isolate min-h-[36rem] overflow-hidden bg-gradient-to-b from-background via-[#36061c]/30 to-[#220412]">
+    <footer className="footer-scene relative isolate min-h-[38rem] overflow-hidden">
       <img
         src={footerWash}
         alt=""
@@ -25,54 +28,59 @@ export function WeddingFooter() {
         loading="lazy"
         width={1024}
         height={1280}
-        className="absolute inset-0 -z-30 h-full w-full object-cover opacity-20"
+        className="absolute inset-0 -z-30 h-full w-full object-cover"
         style={{ transform: `translate3d(0, ${-drift * 0.32}px, 0) scale(1.12)` }}
       />
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,var(--color-background)_0%,transparent_24%,color-mix(in_oklab,var(--color-background)_38%,transparent)_100%)]" />
+      <img
+        src={lanterns}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        width={1024}
+        height={1536}
+        className="pointer-events-none absolute -right-24 -top-32 -z-10 h-[110%] w-auto opacity-40"
+      />
+      <img
+        src={lantern}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        width={1024}
+        height={1536}
+        className="lantern-breathe pointer-events-none absolute -left-10 top-24 -z-10 w-28 opacity-70"
+      />
 
-      <div className="mx-auto flex min-h-[36rem] max-w-lg flex-col items-center justify-end px-7 pb-10 pt-24 text-center">
-        <div className="flex items-center justify-center gap-3 text-primary">
-          <span className="h-px w-10 bg-primary/40" />
-          <span className="text-sm font-bold">ॐ</span>
-          <span className="h-px w-10 bg-primary/40" />
-        </div>
-
+      <div className="mx-auto flex min-h-[38rem] max-w-lg flex-col items-center justify-end px-7 pb-10 pt-32 text-center">
+        <img
+          src={floral}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width={1024}
+          height={1024}
+          className="w-24 opacity-75"
+        />
         <p className="mt-4 script text-lg text-primary">Celebrating Love &amp; Happiness</p>
-        <h2 className="mt-3 font-display text-[2.4rem] leading-[1.1] text-foreground font-semibold">
-          {couple.groom} <span className="script text-2xl text-primary">&amp;</span> {couple.bride}
+        <h2 className="mt-4 font-display text-[2.65rem] leading-[1.05]">
+          {couple.groomShort} <span className="script text-2xl text-primary">&amp;</span> {couple.brideShort}
         </h2>
 
-        <div className="mt-7 grid w-full max-w-sm grid-cols-2 border-y border-primary/25 py-4 text-left bg-card/60 rounded">
-          <div className="border-r border-primary/25 pr-5 pl-2">
-            <p className="text-[0.65rem] uppercase tracking-wider text-muted-foreground font-semibold">
-              The Muhurtham
-            </p>
-            <p className="mt-1 font-display text-lg font-bold text-foreground">17 Sept 2026</p>
-            <p className="text-[0.7rem] text-primary font-medium">7:31 AM - 9:00 AM</p>
+        <div className="mt-7 grid w-full max-w-sm grid-cols-2 border-y border-primary/25 py-4 text-left">
+          <div className="border-r border-primary/25 pr-5">
+            <p className="text-xs text-muted-foreground">The wedding</p>
+            <p className="mt-1 font-display text-lg">17 September 2026</p>
           </div>
           <div className="pl-5">
-            <p className="text-[0.65rem] uppercase tracking-wider text-muted-foreground font-semibold">
-              The Reception
-            </p>
-            <p className="mt-1 font-display text-lg font-bold text-foreground">16 Sept 2026</p>
-            <p className="text-[0.7rem] text-primary font-medium">6:30 PM Onwards</p>
+            <p className="text-xs text-muted-foreground">The place</p>
+            <p className="mt-1 font-display text-lg">Pasuvanthanai</p>
           </div>
-        </div>
-
-        <div className="mt-5 text-center">
-          <p className="text-[0.65rem] uppercase tracking-widest text-muted-foreground font-semibold">
-            Location
-          </p>
-          <p className="mt-1 font-display text-base font-semibold text-foreground">
-            Sri Kailasanathar Temple &amp; Durga Mahal
-          </p>
-          <p className="text-xs text-muted-foreground">Pasuvanthanai, Tamil Nadu</p>
         </div>
 
         <button
           type="button"
           onClick={copyInvitation}
-          className="press mt-7 min-h-[48px] rounded border border-primary/50 bg-primary px-6 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          className="press mt-7 min-h-[48px] rounded-sm border border-primary/45 bg-background/70 px-6 text-[0.66rem] uppercase tracking-[0.2em] text-foreground backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           Copy invitation link
         </button>
@@ -80,11 +88,11 @@ export function WeddingFooter() {
           {shareStatus}
         </p>
 
-        <p className="mt-6 font-display text-base italic text-primary font-semibold">
+        <p className="mt-6 text-xs leading-relaxed text-foreground/75 font-medium">
           {couple.complements}
         </p>
-        <p className="mt-2 text-xs leading-relaxed text-foreground/80 font-medium">
-          {couple.groomParents} · {couple.groomNative}
+        <p className="mt-1 text-xs leading-relaxed text-foreground/60">
+          Mr. A.S. Raja Sekar &amp; Mrs. R. Jeyakodi · South Theethampatti
         </p>
       </div>
     </footer>
