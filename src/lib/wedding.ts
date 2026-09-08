@@ -22,6 +22,9 @@ export const couple = {
   receptionISO: "2026-09-16T18:30:00+05:30",
   weddingISO: "2026-09-17T07:31:00+05:30",
 
+  productionUrl: "https://pandian-weds-priya.vercel.app",
+  ogImageUrl: "https://pandian-weds-priya.vercel.app/og-image.png",
+
   locationLabel: "Pasuvanthanai, Thoothukudi Dist, Tamil Nadu",
   templeVenue: "Sri Kailasanathar - Sri Anandavalli Amman Temple, Pasuvanthanai",
   mahalVenue: "Durga Mahal, Pasuvanthanai",

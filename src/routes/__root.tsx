@@ -77,21 +77,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "With great joy, Mr. A.S. Raja Sekar & Mrs. R. Jeyakodi cordially invite you to the wedding celebrations of R. Maharaja Pandian & S. Sathiya Priya on 16 & 17 September 2026 at Sri Kailasanathar Temple and Durga Mahal, Pasuvanthanai.",
+          "With great joy, Mr. A.S. Raja Sekar & Mrs. R. Jeyakodi cordially invite you to the wedding celebrations of R. Maharaja Pandian & S. Sathiya Priya on 16 & 17 September 2026 at Durga Mahal and Sri Kailasanathar Temple, Pasuvanthanai.",
       },
+      // Open Graph
+      { property: "og:site_name", content: "Maharaja Pandian & Sathiya Priya Wedding" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://pandian-weds-priya.vercel.app/" },
       {
         property: "og:title",
-        content: "R. Maharaja Pandian & S. Sathiya Priya | Wedding Invitation",
+        content: "Maharaja Pandian & Sathiya Priya | Wedding Invitation",
       },
       {
         property: "og:description",
         content:
-          "Wedding celebration on 16 & 17 September 2026 at Pasuvanthanai, Tamil Nadu. Reception, Muhurtham, and venue directions.",
+          "Main Function & Reception: Wednesday, 16th September 2026 (6:30 PM - 9:00 PM). Auspicious Muhurtham: Thursday, 17th September 2026 (7:31 AM - 9:00 AM) at Pasuvanthanai, Tamil Nadu.",
       },
-      { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "https://pandian-weds-priya.vercel.app/og-image.png",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "R. Maharaja Pandian & S. Sathiya Priya Wedding Invitation Preview",
+      },
+      // Twitter
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Maharaja Pandian & Sathiya Priya | Wedding Invitation",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Wedding celebrations on 16 & 17 September 2026 at Pasuvanthanai, Tamil Nadu. Reception & Muhurtham details.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://pandian-weds-priya.vercel.app/og-image.png",
+      },
     ],
     links: [
+      { rel: "canonical", href: "https://pandian-weds-priya.vercel.app/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

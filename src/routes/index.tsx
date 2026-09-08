@@ -31,6 +31,9 @@ export const Route = createFileRoute("/")({
         content:
           "With great joy, Mr. A.S. Raja Sekar & Mrs. R. Jeyakodi invite you to the wedding of R. Maharaja Pandian & S. Sathiya Priya at Durga Mahal & Sri Kailasanathar Temple, Pasuvanthanai. Main Function & Reception on 16th September 2026.",
       },
+      { property: "og:site_name", content: "Maharaja Pandian & Sathiya Priya Wedding" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://pandian-weds-priya.vercel.app/" },
       {
         property: "og:title",
         content: "Maharaja Pandian & Sathiya Priya | Wedding Invitation",
@@ -38,10 +41,32 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Main Function & Reception: 16th September 2026 (6:30 PM - 9:00 PM). Muhurtham: 17th September 2026 (7:31 AM - 9:00 AM) at Pasuvanthanai, Tamil Nadu.",
+          "Main Function & Reception: Wednesday, 16th September 2026 (6:30 PM - 9:00 PM). Auspicious Muhurtham: Thursday, 17th September 2026 (7:31 AM - 9:00 AM) at Pasuvanthanai, Tamil Nadu.",
       },
-      { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "https://pandian-weds-priya.vercel.app/og-image.png",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Maharaja Pandian & Sathiya Priya Wedding Invitation Preview",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Maharaja Pandian & Sathiya Priya | Wedding Invitation",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Main Function & Reception: 16th September 2026 (6:30 PM - 9:00 PM). Muhurtham: 17th September 2026 (7:31 AM - 9:00 AM).",
+      },
+      {
+        name: "twitter:image",
+        content: "https://pandian-weds-priya.vercel.app/og-image.png",
+      },
     ],
   }),
   component: Invitation,
