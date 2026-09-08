@@ -9,5 +9,10 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  server: {
+    watch: {
+      ignored: ["**/.output/**", "**/.nitro/**"],
+    },
+  },
 });
 
