@@ -10,6 +10,9 @@ import { MusicPlayer } from "@/components/wedding/MusicPlayer";
 import { couple, events, venue, downloadICS } from "@/lib/wedding";
 import { useParallax } from "@/hooks/use-reveal";
 
+import brideImg from "@/assets/bride.jpg";
+import groomImg from "@/assets/groom.jpg";
+
 const floral = "https://media.invitestory.in/seashell-vows/src/assets/floral-spray.png";
 import mapImg from "@/assets/venue-map.jpg";
 const ringsVignette = "https://media.invitestory.in/seashell-vows/src/assets/rings-seashell-vignette.png";
@@ -87,27 +90,59 @@ function Invitation() {
               &ldquo;With great joy, they requested the honour of your presence together with your family, on the auspicious occasion of the Marriage of their beloved Son&rdquo;
             </p>
 
-            <div className="pt-2">
-              <h3 className="font-display text-2xl font-bold text-foreground">
-                {couple.groom}
-              </h3>
-              <p className="text-xs uppercase tracking-wider text-primary font-semibold">
-                {couple.groomDegree} · {couple.groomProfession}
-              </p>
-            </div>
+            {/* Bride & Groom Portrait Cards */}
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch text-center">
+              {/* Groom */}
+              <div className="card-soft p-5 flex flex-col items-center justify-between">
+                <div className="flex flex-col items-center">
+                  <div className="relative h-32 w-32 sm:h-36 sm:w-36 overflow-hidden rounded-full border-2 border-primary/45 p-1 bg-background/80 shadow-md">
+                    <img
+                      src={groomImg}
+                      alt={couple.groom}
+                      className="h-full w-full rounded-full object-cover object-top"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl font-bold text-foreground">
+                    {couple.groom}
+                  </h3>
+                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">
+                    {couple.groomDegree}
+                  </p>
+                  <p className="text-xs text-foreground/80 font-medium mt-1">
+                    ({couple.groomProfession})
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-primary/20 w-full text-xs text-muted-foreground">
+                  <p>Son of {couple.groomParents}</p>
+                  <p className="text-[0.7rem] text-primary mt-0.5">{couple.groomNative}</p>
+                </div>
+              </div>
 
-            <p className="script text-2xl text-primary font-normal">weds</p>
-
-            <div>
-              <h3 className="font-display text-2xl font-bold text-foreground">
-                {couple.bride}
-              </h3>
-              <p className="text-xs uppercase tracking-wider text-primary font-semibold">
-                {couple.brideDegree}
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                D/o {couple.brideParents} · {couple.brideNative}
-              </p>
+              {/* Bride */}
+              <div className="card-soft p-5 flex flex-col items-center justify-between">
+                <div className="flex flex-col items-center">
+                  <div className="relative h-32 w-32 sm:h-36 sm:w-36 overflow-hidden rounded-full border-2 border-primary/45 p-1 bg-background/80 shadow-md">
+                    <img
+                      src={brideImg}
+                      alt={couple.bride}
+                      className="h-full w-full rounded-full object-cover object-top"
+                    />
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl font-bold text-foreground">
+                    {couple.bride}
+                  </h3>
+                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">
+                    {couple.brideDegree}
+                  </p>
+                  <p className="text-xs text-foreground/80 font-medium mt-1">
+                    (Bride)
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-primary/20 w-full text-xs text-muted-foreground">
+                  <p>Daughter of {couple.brideParents}</p>
+                  <p className="text-[0.7rem] text-primary mt-0.5">{couple.brideNative}</p>
+                </div>
+              </div>
             </div>
           </div>
 
