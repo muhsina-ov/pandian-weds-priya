@@ -50,15 +50,18 @@ export function Hero() {
           alt="Bride and groom walking hand in hand"
           width={1024}
           height={1536}
-          className="pointer-events-none absolute bottom-[28%] left-1/2 w-[64%] max-w-[300px] -translate-x-1/2 object-contain animate-bloom drop-shadow-[0_18px_28px_rgba(92,80,68,0.18)]"
+          className="pointer-events-none absolute bottom-[35%] sm:bottom-[34%] left-1/2 w-[60%] max-w-[270px] -translate-x-1/2 object-contain animate-bloom drop-shadow-[0_18px_28px_rgba(92,80,68,0.18)]"
           style={{ transform: `translate3d(-50%, ${-fg * 0.6}px, 0)` }}
         />
 
         <div
-          className="relative flex min-h-[100svh] flex-col items-center justify-end px-6 pb-14 text-center"
+          className="relative flex min-h-[100svh] flex-col items-center justify-end px-6 pb-12 sm:pb-14 text-center z-10"
           style={{ transform: `translate3d(0, ${-fg}px, 0)` }}
         >
-          <p className="script text-lg text-primary animate-ink" style={{ animationDelay: "0.4s" }}>
+          <p
+            className="script text-xl sm:text-2xl text-foreground/90 font-medium tracking-wide animate-ink"
+            style={{ animationDelay: "0.4s" }}
+          >
             Together with our families
           </p>
           <h1
