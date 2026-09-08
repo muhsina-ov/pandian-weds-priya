@@ -51,13 +51,24 @@ function FlipCell({ value, label }: { value: number; label: string }) {
 }
 
 export function Countdown({ iso }: { iso: string }) {
+  const [mounted, setMounted] = useState(false);
   const t = useCountdown(iso);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const days = mounted ? t.days : 0;
+  const hours = mounted ? t.hours : 0;
+  const minutes = mounted ? t.minutes : 0;
+  const seconds = mounted ? t.seconds : 0;
+
   return (
     <div className="flex items-start gap-2">
-      <FlipCell value={t.days} label="Days" />
-      <FlipCell value={t.hours} label="Hrs" />
-      <FlipCell value={t.minutes} label="Min" />
-      <FlipCell value={t.seconds} label="Sec" />
+      <FlipCell value={days} label="Days" />
+      <FlipCell value={hours} label="Hrs" />
+      <FlipCell value={minutes} label="Min" />
+      <FlipCell value={seconds} label="Sec" />
     </div>
   );
 }

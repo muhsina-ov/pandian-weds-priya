@@ -7,6 +7,7 @@ import { SectionTitle } from "@/components/wedding/Ornaments";
 import { WishLantern } from "@/components/wedding/WishLantern";
 import { WeddingFooter } from "@/components/wedding/WeddingFooter";
 import { InvitationOpener } from "@/components/wedding/InvitationOpener";
+import { MusicPlayer } from "@/components/wedding/MusicPlayer";
 import { couple, events, venues, downloadICS } from "@/lib/wedding";
 import { useParallax } from "@/hooks/use-reveal";
 
@@ -459,6 +460,7 @@ function Invitation() {
       </section>
 
       <WeddingFooter />
+      <MusicPlayer />
     </main>
   );
 }

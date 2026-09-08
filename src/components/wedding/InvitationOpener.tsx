@@ -23,6 +23,7 @@ export function InvitationOpener() {
   function handleOpen() {
     setOpened(true);
     sessionStorage.setItem(SESSION_KEY, "true");
+    window.dispatchEvent(new Event("start-wedding-music"));
     setTimeout(() => {
       document.body.style.overflow = "";
       setVisible(false);
