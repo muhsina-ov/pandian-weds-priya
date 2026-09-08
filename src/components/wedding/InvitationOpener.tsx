@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-const poster = "https://media.invitestory.in/seashell-vows/src/assets/opener-frames/lantern-reveal-first.png";
+const poster =
+  "https://media.invitestory.in/seashell-vows/src/assets/opener-frames/lantern-reveal-first.png";
 
 const SESSION_KEY = "pandian-priya-wedding-opened";
 

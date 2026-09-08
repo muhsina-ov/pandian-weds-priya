@@ -26,10 +26,7 @@ export function PetalTap({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div
-      className="relative"
-      onPointerDown={(e) => spawn(e.clientX, e.clientY, e.currentTarget)}
-    >
+    <div className="relative" onPointerDown={(e) => spawn(e.clientX, e.clientY, e.currentTarget)}>
       {children}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {petals.map((p) => (

@@ -8,21 +8,11 @@ export function Divider({ label }: { label?: string }) {
   );
 }
 
-export function SectionTitle({
-  overline,
-  title,
-}: {
-  overline: string;
-  title: string;
-}) {
+export function SectionTitle({ overline, title }: { overline: string; title: string }) {
   return (
     <div className="text-center">
-      <p className="text-[0.62rem] uppercase tracking-airy text-muted-foreground">
-        {overline}
-      </p>
-      <h2 className="mt-3 font-display text-[2rem] leading-tight text-foreground">
-        {title}
-      </h2>
+      <p className="text-[0.62rem] uppercase tracking-airy text-muted-foreground">{overline}</p>
+      <h2 className="mt-3 font-display text-[2rem] leading-tight text-foreground">{title}</h2>
       <Divider />
     </div>
   );

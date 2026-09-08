@@ -43,9 +43,7 @@ function FlipCell({ value, label }: { value: number; label: string }) {
         </span>
         <span className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-primary/25" />
       </div>
-      <span className="text-[0.55rem] uppercase tracking-airy text-muted-foreground">
-        {label}
-      </span>
+      <span className="text-[0.55rem] uppercase tracking-airy text-muted-foreground">{label}</span>
     </div>
   );
 }

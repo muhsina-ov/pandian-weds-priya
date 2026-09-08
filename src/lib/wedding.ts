@@ -14,13 +14,13 @@ export const couple = {
 
   tagline: "Celebrating Love & Happiness",
   dateLabel: "16 & 17 September 2026",
+  receptionDateLabel: "Wednesday, 16th September 2026",
+  receptionTimeLabel: "Evening 6:30 PM to 9:00 PM",
   weddingDateLabel: "Thursday, 17th September 2026",
   weddingTimeLabel: "between 7.31 am to 9.00 am",
-  receptionDateLabel: "Wednesday, 16th September 2026",
-  receptionTimeLabel: "6.30 pm onwards",
 
-  weddingISO: "2026-09-17T07:31:00+05:30",
   receptionISO: "2026-09-16T18:30:00+05:30",
+  weddingISO: "2026-09-17T07:31:00+05:30",
 
   locationLabel: "Pasuvanthanai, Thoothukudi Dist, Tamil Nadu",
   templeVenue: "Sri Kailasanathar - Sri Anandavalli Amman Temple, Pasuvanthanai",
@@ -32,9 +32,10 @@ export const couple = {
   complements: "With best complements from Friends & Relatives",
 
   honouredBy: [
-    { name: "Madasamy", role: "Cluster Manager, JSW Energy" },
-    { name: "Venkadeshwaran.K", role: "AM, JSW Energy" },
-    { name: "Venkadeswaravel.A", role: "AM, JSW Energy" },
+    { name: "Mr. A. Mani" },
+    { name: "Mr. L. Murugan" },
+    { name: "Mr. S. Sakthivel" },
+    { name: "Mr. G. Raghuram" },
   ],
 };
 
@@ -46,34 +47,40 @@ export type WeddingEvent = {
   venue: string;
   note: string;
   iso: string;
+  isMain?: boolean;
+  badge?: string;
 };
 
 export const events: WeddingEvent[] = [
   {
-    name: "Wedding Reception",
-    glyph: "❖",
+    name: "Grand Wedding Reception",
+    badge: "Special Main Function",
+    isMain: true,
+    glyph: "✦",
     date: "Wednesday, 16th September 2026",
-    time: "6:30 PM onwards",
+    time: "Evening 6:30 PM to 9:00 PM",
     venue: "Durga Mahal, Pasuvanthanai",
-    note: "An evening of warm felicitations, joyful music, and celebratory dinner.",
+    note: "Special Main Celebration with warm felicitations, joyful music, family gatherings, and royal celebratory dinner feast.",
     iso: "2026-09-16T18:30:00+05:30",
   },
   {
     name: "Auspicious Muhurtham (Wedding)",
+    badge: "Sacred Ceremony",
     glyph: "☀",
     date: "Thursday, 17th September 2026",
     time: "Between 7:31 AM to 9:00 AM",
     venue: "Sri Kailasanathar - Sri Anandavalli Amman Temple, Pasuvanthanai",
-    note: "Sacred Thali tying muhurtham ceremony in the presence of the Divine & family.",
+    note: "Sacred Thali tying muhurtham ceremony in the divine presence of Sri Kailasanathar & family.",
     iso: "2026-09-17T07:31:00+05:30",
   },
   {
     name: "Followed Function & Wedding Feast",
+    badge: "Kalyana Virundhu",
     glyph: "❋",
     date: "Thursday, 17th September 2026",
     time: "Following the Muhurtham (9:30 AM onwards)",
     venue: "Durga Mahal, Pasuvanthanai",
-    note: "Traditional South Indian wedding feast (Kalyana Virundhu) and blessing celebrations.",
+    note: "Traditional South Indian wedding feast (Kalyana Virundhu) and cordial blessings.",
     iso: "2026-09-17T09:30:00+05:30",
   },
 ];
@@ -93,10 +100,8 @@ export const venues = [
     category: "Reception & Followed Function Venue",
     name: "Durga Mahal (AKR Durga Mahal)",
     address: "North Car Street, Pasuvanthanai, Thoothukudi District, Tamil Nadu 628718",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=AKR+Durga+Mahal+Pasuvanthanai",
-    timing:
-      "Reception: 16th Sept (6:30 PM onwards) · Wedding Feast: 17th Sept (Post Muhurtham)",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=AKR+Durga+Mahal+Pasuvanthanai",
+    timing: "Reception: 16th Sept (6:30 PM onwards) · Wedding Feast: 17th Sept (Post Muhurtham)",
     description:
       "Grand wedding reception hall located conveniently on North Car Street for dining, family gatherings, and celebratory felicitation.",
   },
@@ -118,7 +123,7 @@ export function buildICS() {
   ];
 
   const eventDurations: Record<string, number> = {
-    "Wedding Reception": 4 * 60 * 60 * 1000,
+    "Grand Wedding Reception": 2.5 * 60 * 60 * 1000,
     "Auspicious Muhurtham (Wedding)": 2 * 60 * 60 * 1000,
     "Followed Function & Wedding Feast": 4 * 60 * 60 * 1000,
   };

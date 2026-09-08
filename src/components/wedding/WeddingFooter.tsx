@@ -63,7 +63,8 @@ export function WeddingFooter() {
         />
         <p className="mt-4 script text-lg text-primary">Celebrating Love &amp; Happiness</p>
         <h2 className="mt-4 font-display text-[2.65rem] leading-[1.05]">
-          {couple.groomShort} <span className="script text-2xl text-primary">&amp;</span> {couple.brideShort}
+          {couple.groomShort} <span className="script text-2xl text-primary">&amp;</span>{" "}
+          {couple.brideShort}
         </h2>
 
         <div className="mt-7 grid w-full max-w-sm grid-cols-2 border-y border-primary/25 py-4 text-left">
