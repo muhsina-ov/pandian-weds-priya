@@ -90,18 +90,15 @@ export function WeddingFooter() {
         </p>
 
         <div className="mt-8 w-full max-w-sm border-t border-primary/25 pt-6 text-center">
-          <p className="text-xs leading-relaxed text-foreground/80 font-medium">
-            {couple.complements}
-          </p>
-          <p className="mt-1 text-xs leading-relaxed text-foreground/65">
-            Mr. A.S. Raja Sekar &amp; Mrs. R. Jeyakodi · South Theethampatti
-          </p>
-          <div className="mt-4 flex flex-col items-center">
-            <span className="text-[0.62rem] uppercase tracking-widest text-primary font-semibold">
-              With Love &amp; Regards
+          <div className="flex flex-col items-center">
+            <span className="text-[0.66rem] uppercase tracking-widest text-primary font-semibold">
+              With Best Compliments From Friends &amp; Relatives
             </span>
-            <p className="mt-1 font-display text-lg font-bold text-foreground tracking-wide">
+            <p className="mt-2 font-display text-lg sm:text-xl font-bold text-foreground tracking-wide">
               {couple.withLoveFrom}
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+              Mr. A.S. Raja Sekar &amp; Mrs. R. Jeyakodi · South Theethampatti
             </p>
           </div>
         </div>
