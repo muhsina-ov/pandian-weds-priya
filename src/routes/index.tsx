@@ -129,17 +129,17 @@ function Invitation() {
               {/* Groom */}
               <div className="card-soft p-5 sm:p-6 flex flex-col items-center justify-between rounded-2xl border-2 border-primary/35 shadow-xl transition-all duration-300 hover:shadow-primary/20 hover:-translate-y-1">
                 <div className="flex flex-col items-center w-full">
-                  <div className="relative h-56 w-48 sm:h-64 sm:w-52 overflow-hidden rounded-2xl border-2 border-primary/60 p-1 bg-gradient-to-b from-primary/20 to-transparent shadow-lg">
+                  <div className="relative h-64 w-52 sm:h-72 sm:w-60 overflow-hidden rounded-2xl border-2 border-primary/60 p-1 bg-gradient-to-b from-primary/25 via-primary/10 to-transparent shadow-lg">
                     <img
                       src={groomImg}
                       alt={couple.groom}
-                      className="h-full w-full rounded-xl object-cover object-top hover:scale-105 transition-transform duration-500"
+                      className="h-full w-full rounded-xl object-cover object-[center_12%] hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-primary/95 backdrop-blur-sm px-3 py-0.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary-foreground shadow">
-                      The Groom
+                    <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 rounded-full bg-primary/95 backdrop-blur-sm px-3.5 py-0.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary-foreground shadow">
+                      ✦ The Groom ✦
                     </div>
                   </div>
-                  <h3 className="mt-4 font-display text-2xl sm:text-[1.7rem] font-bold text-foreground">
+                  <h3 className="mt-4 font-display text-2xl sm:text-[1.75rem] font-bold text-foreground">
                     {couple.groom}
                   </h3>
                   <p className="text-xs uppercase tracking-wider text-primary font-semibold mt-0.5">
@@ -160,17 +160,17 @@ function Invitation() {
               {/* Bride */}
               <div className="card-soft p-5 sm:p-6 flex flex-col items-center justify-between rounded-2xl border-2 border-primary/35 shadow-xl transition-all duration-300 hover:shadow-primary/20 hover:-translate-y-1">
                 <div className="flex flex-col items-center w-full">
-                  <div className="relative h-56 w-48 sm:h-64 sm:w-52 overflow-hidden rounded-2xl border-2 border-primary/60 p-1 bg-gradient-to-b from-primary/20 to-transparent shadow-lg">
+                  <div className="relative h-64 w-52 sm:h-72 sm:w-60 overflow-hidden rounded-2xl border-2 border-primary/60 p-1 bg-gradient-to-b from-primary/25 via-primary/10 to-transparent shadow-lg">
                     <img
                       src={brideImg}
                       alt={couple.bride}
-                      className="h-full w-full rounded-xl object-cover object-top hover:scale-105 transition-transform duration-500"
+                      className="h-full w-full rounded-xl object-cover object-[center_18%] hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-primary/95 backdrop-blur-sm px-3 py-0.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary-foreground shadow">
-                      The Bride
+                    <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 rounded-full bg-primary/95 backdrop-blur-sm px-3.5 py-0.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary-foreground shadow">
+                      ✦ The Bride ✦
                     </div>
                   </div>
-                  <h3 className="mt-4 font-display text-2xl sm:text-[1.7rem] font-bold text-foreground">
+                  <h3 className="mt-4 font-display text-2xl sm:text-[1.75rem] font-bold text-foreground">
                     {couple.bride}
                   </h3>
                   <p className="text-xs uppercase tracking-wider text-primary font-semibold mt-0.5">
@@ -203,9 +203,9 @@ function Invitation() {
       </section>
 
       {/* Honoured Guests / Dignitaries */}
-      <section className="relative px-6 pb-16">
+      <section className="relative px-5 sm:px-6 pb-16">
         <Reveal>
-          <div className="mx-auto max-w-lg card-soft p-6 sm:p-7 rounded-2xl border-2 border-primary/35 shadow-xl text-center">
+          <div className="mx-auto max-w-xl card-soft p-6 sm:p-7 rounded-2xl border-2 border-primary/35 shadow-xl text-center">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/20 px-3 py-0.5 text-[0.62rem] uppercase tracking-airy text-primary font-bold">
               Distinguished Dignitaries
             </span>
@@ -217,24 +217,30 @@ function Invitation() {
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              {couple.honouredBy.map((h) => (
-                <div
-                  key={h.name}
-                  className="rounded-xl border border-primary/25 bg-background/85 p-3.5 flex items-center gap-3 text-left shadow-sm transition-transform hover:scale-[1.02]"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary text-sm font-serif font-bold">
-                    ✦
-                  </span>
-                  <div>
-                    <p className="font-display text-lg font-bold text-foreground leading-snug">
-                      {h.name}
-                    </p>
-                    <p className="text-[0.66rem] uppercase tracking-wider text-muted-foreground">
-                      Honoured Guest
-                    </p>
+              {couple.honouredBy.map((h, idx) => {
+                const isLastOdd =
+                  idx === couple.honouredBy.length - 1 && couple.honouredBy.length % 2 !== 0;
+                return (
+                  <div
+                    key={h.name}
+                    className={`rounded-xl border border-primary/25 bg-background/85 p-3.5 flex items-center gap-3 text-left shadow-sm transition-transform hover:scale-[1.02] ${
+                      isLastOdd ? "sm:col-span-2 sm:max-w-sm sm:mx-auto sm:w-full" : ""
+                    }`}
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary text-sm font-serif font-bold">
+                      ✦
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-display text-base sm:text-lg font-bold text-foreground leading-snug truncate">
+                        {h.name}
+                      </p>
+                      <p className="text-[0.68rem] uppercase tracking-wider text-muted-foreground truncate">
+                        {h.role || "Honoured Dignitary"}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </Reveal>

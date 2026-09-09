@@ -56,7 +56,7 @@ export function Hero() {
               <img
                 src={groomImg}
                 alt={couple.groom}
-                className="h-full w-full rounded-full object-cover object-top"
+                className="h-full w-full rounded-full object-cover object-[center_15%]"
               />
               <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-2 py-0.5 text-[0.55rem] font-bold uppercase tracking-wider text-primary-foreground shadow-sm whitespace-nowrap">
                 Groom
@@ -69,7 +69,7 @@ export function Hero() {
               <img
                 src={brideImg}
                 alt={couple.bride}
-                className="h-full w-full rounded-full object-cover object-top"
+                className="h-full w-full rounded-full object-cover object-[center_18%]"
               />
               <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-2 py-0.5 text-[0.55rem] font-bold uppercase tracking-wider text-primary-foreground shadow-sm whitespace-nowrap">
                 Bride
