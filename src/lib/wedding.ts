@@ -33,7 +33,7 @@ export const couple = {
   invitationHostNote:
     "with great joy, they requested the honour of your presence together with your family, on the auspicious occasion of the Marriage of their beloved Son",
   complements: "With Best Compliments from Friends & Relatives",
-  withLoveFrom: "R. Bhavani Sangara",
+  withLoveFrom: "R. Bhavani Sangara Pandian",
 
   honouredBy: [
     { name: "Madasamy", role: "Cluster Manager, JSW Energy" },
